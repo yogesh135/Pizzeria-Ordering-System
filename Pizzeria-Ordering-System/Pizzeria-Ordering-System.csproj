@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Pizzeria-Ordering-System.Repository\Pizzeria-Ordering-System.Repository.csproj" />
   </ItemGroup>
 

@@ -24,18 +24,18 @@ namespace Pizzeria_Ordering_System.Repository.Interfaces
         /// </summary>
         /// <param name="typeId">type of constituents</param>
         /// <returns>List of constituents for a given type</returns>
-        Task<IEnumerable<Constituents>> GetIngredientsByTypeIdAsync(int typeId);
+        Task<IEnumerable<Constituents>> GetConstituentByTypeIdAsync(int typeId);
 
         /// <summary>
         /// Get all constituents type.
         /// </summary>
         /// <returns>List of all constituents type.</returns>
-        Task<IEnumerable<ConstituentsType>> GetAllIngredientTypesAsync();
+        Task<IEnumerable<ConstituentsType>> GetAllConstituentTypesAsync();
 
         /// <summary>
         /// Get the size of the Pizza.
         /// </summary>
         /// <returns>Returns the size of pizza.</returns>
-        Task<IEnumerable<PizzaSize>> GetSizeAsync();
+        Task<IEnumerable<PizzaSize>> GetPizzaSizeAsync();
     }
 }

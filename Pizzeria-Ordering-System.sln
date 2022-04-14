@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pizzeria-Ordering-System.Re
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pizzeria-Ordering-System.DataTransfer", "Pizzeria-Ordering-System.DataTransfer\Pizzeria-Ordering-System.DataTransfer.csproj", "{358476B9-7758-43B2-92F9-F1D1372A6BCE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pizzeria-Ordering-System.Persistence", "Pizzeria-Ordering-System.Persistence\Pizzeria-Ordering-System.Persistence.csproj", "{2B571207-6F68-4665-B969-D01C7A1C351C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{358476B9-7758-43B2-92F9-F1D1372A6BCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{358476B9-7758-43B2-92F9-F1D1372A6BCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{358476B9-7758-43B2-92F9-F1D1372A6BCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B571207-6F68-4665-B969-D01C7A1C351C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B571207-6F68-4665-B969-D01C7A1C351C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B571207-6F68-4665-B969-D01C7A1C351C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B571207-6F68-4665-B969-D01C7A1C351C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

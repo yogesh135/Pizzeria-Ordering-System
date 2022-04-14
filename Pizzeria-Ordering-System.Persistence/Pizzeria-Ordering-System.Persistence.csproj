@@ -2,12 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>Pizzeria_Ordering_System.Repository</RootNamespace>
+    <RootNamespace>Pizzeria_Ordering_System.Persistence</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Pizzeria-Ordering-System.DataTransfer\Pizzeria-Ordering-System.DataTransfer.csproj" />
-    <ProjectReference Include="..\Pizzeria-Ordering-System.Persistence\Pizzeria-Ordering-System.Persistence.csproj" />
   </ItemGroup>
 
 </Project>
