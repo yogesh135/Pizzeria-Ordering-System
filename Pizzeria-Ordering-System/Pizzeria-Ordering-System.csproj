@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Pizzeria_Ordering_System</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Pizzeria-Ordering-System.Repository\Pizzeria-Ordering-System.Repository.csproj" />
+  </ItemGroup>
+
+
+</Project>
