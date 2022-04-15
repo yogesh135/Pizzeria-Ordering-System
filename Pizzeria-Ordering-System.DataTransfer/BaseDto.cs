@@ -1,10 +1,10 @@
 ﻿namespace Pizzeria_Ordering_System.DataTransfer
 {
-    public class Categories : BaseDto
+    public class BaseDto
     {
         /// <summary>
-        /// Category Name.
+        /// Base Id.
         /// </summary>
-        public string Name { get; set; }
+        public int Id { get; set; }
     }
 }

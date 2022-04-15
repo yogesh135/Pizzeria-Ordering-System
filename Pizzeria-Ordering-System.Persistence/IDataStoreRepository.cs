@@ -4,26 +4,26 @@ using System.Threading.Tasks;
 
 namespace Pizzeria_Ordering_System.Persistence
 {
-    public interface ISeedDataRepository
+    public interface IDataStoreRepository
     {
         /// <summary>
         /// Get All Pizzas.
         /// </summary>
         /// <returns></returns>
-        Task<IEnumerable<PizzaSize>> GetAllPizzasAsync();
+        Task<IEnumerable<Pizza>> GetAllPizzasAsync();
 
         /// <summary>
         /// Get Pizza by Id
         /// </summary>
         /// <returns></returns>
-        Task<PizzaSize> GetPizzaByIdAsync(int pizzaId);
+        Task<Pizza> GetPizzaByIdAsync(int pizzaId);
 
         /// <summary>
         /// Save Pizza's
         /// </summary>
         /// <param name="pizza"></param>
         /// <returns></returns>
-        Task<int> SavePizzaAsync(PizzaSize pizza);
+        Task<int> SavePizzaAsync(Pizza pizza);
 
         /// <summary>
         /// Get All the constituents.
@@ -66,6 +66,6 @@ namespace Pizzeria_Ordering_System.Persistence
         /// 
         /// </summary>
         /// <returns></returns>
-        IList<Categories> GetAllCategories();
+        IEnumerable<Categories> GetAllCategories();
     }
 }
