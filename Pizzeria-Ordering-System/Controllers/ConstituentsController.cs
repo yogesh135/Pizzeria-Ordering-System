@@ -82,7 +82,7 @@ namespace Pizzeria_Ordering_System.Controllers
         [Route("Toppings")]
         public async Task<IEnumerable<Constituents>> GetToppings()
         {
-            return await _ingredientRepository.GetIngredientsByTypeIdAsync(3);
+            return await this.constituentsRepository.GetConstituentByTypeIdAsync(3);
         }
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace Pizzeria_Ordering_System.Controllers
         [Route("Sauce")]
         public async Task<IEnumerable<Constituents>> GetPizzaSauce()
         {
-            return await _ingredientRepository.GetIngredientsByTypeIdAsync(2);
+            return await this.constituentsRepository.GetConstituentByTypeIdAsync(2);
         }
 
         /// <summary>
@@ -104,7 +104,7 @@ namespace Pizzeria_Ordering_System.Controllers
         [Route("Crust")]
         public async Task<IEnumerable<Constituents>> GetCrust()
         {
-            return await _ingredientRepository.GetIngredientsByTypeIdAsync(1);
+            return await this.constituentsRepository.GetConstituentByTypeIdAsync(1);
         }
     }
 }

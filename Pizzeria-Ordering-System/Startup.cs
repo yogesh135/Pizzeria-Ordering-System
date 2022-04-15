@@ -1,8 +1,13 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Pizzeria_Ordering_System.Persistence;
+using Pizzeria_Ordering_System.Repository.Implementations;
+using Pizzeria_Ordering_System.Repository.Interfaces;
+using System.Text.Json.Serialization;
 
 namespace Pizzeria_Ordering_System
 {
@@ -19,6 +24,22 @@ namespace Pizzeria_Ordering_System
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            
+            services.AddApiVersioning(config =>
+            {
+                // Specify the default API Version as 1.0
+                config.DefaultApiVersion = new ApiVersion(1, 0);
+                config.AssumeDefaultVersionWhenUnspecified = true;
+            });
+
+            services.AddControllers().AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+                options.JsonSerializerOptions.IgnoreNullValues = true;
+            });
+
+            services.AddSingleton<IDataStoreRepository, DataStoreRepository>();
+            services.AddScoped<IConstituentsRepository, ConstituentsRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -34,6 +55,11 @@ namespace Pizzeria_Ordering_System
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCors(x => x
+           .AllowAnyOrigin()
+           .AllowAnyMethod()
+           .AllowAnyHeader());
 
             app.UseEndpoints(endpoints =>
             {
