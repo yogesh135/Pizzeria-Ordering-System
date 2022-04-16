@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Pizzeria_Ordering_System.Controllers
 {
     [ApiVersion("1.0")]
-    [Route("api/v{version:apiVersion}/Constituents")]
+    [Route("api/v{version:apiVersion}/constituents")]
     [ApiController]
     public class ConstituentsController : ControllerBase
     {

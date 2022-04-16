@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pizzeria-Ordering-System", "Pizzeria-Ordering-System\Pizzeria-Ordering-System.csproj", "{AC144C13-1359-4EB0-90E8-601E755A3950}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pizzeria-Ordering-System", "Pizzeria-Ordering-System\Pizzeria-Ordering-System.csproj", "{AC144C13-1359-4EB0-90E8-601E755A3950}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repository", "Repository", "{0C7D30CF-8BDA-4339-B391-CFF1121C7406}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pizzeria-Ordering-System.Repository", "Pizzeria-Ordering-System.Repository\Pizzeria-Ordering-System.Repository.csproj", "{C63F778B-2EE2-4356-AA2A-B9D4E02BA0B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pizzeria-Ordering-System.Repository", "Pizzeria-Ordering-System.Repository\Pizzeria-Ordering-System.Repository.csproj", "{C63F778B-2EE2-4356-AA2A-B9D4E02BA0B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pizzeria-Ordering-System.DataTransfer", "Pizzeria-Ordering-System.DataTransfer\Pizzeria-Ordering-System.DataTransfer.csproj", "{358476B9-7758-43B2-92F9-F1D1372A6BCE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pizzeria-Ordering-System.DataTransfer", "Pizzeria-Ordering-System.DataTransfer\Pizzeria-Ordering-System.DataTransfer.csproj", "{358476B9-7758-43B2-92F9-F1D1372A6BCE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pizzeria-Ordering-System.Persistence", "Pizzeria-Ordering-System.Persistence\Pizzeria-Ordering-System.Persistence.csproj", "{2B571207-6F68-4665-B969-D01C7A1C351C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pizzeria-Ordering-System.Persistence", "Pizzeria-Ordering-System.Persistence\Pizzeria-Ordering-System.Persistence.csproj", "{2B571207-6F68-4665-B969-D01C7A1C351C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pizzeria-Ordering-System.Contract", "Pizzeria-Ordering-System.Contract\Pizzeria-Ordering-System.Contract.csproj", "{B6364FA1-3D25-41A5-BA96-D12FBD381E2C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +37,10 @@ Global
 		{2B571207-6F68-4665-B969-D01C7A1C351C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B571207-6F68-4665-B969-D01C7A1C351C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B571207-6F68-4665-B969-D01C7A1C351C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6364FA1-3D25-41A5-BA96-D12FBD381E2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6364FA1-3D25-41A5-BA96-D12FBD381E2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6364FA1-3D25-41A5-BA96-D12FBD381E2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6364FA1-3D25-41A5-BA96-D12FBD381E2C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

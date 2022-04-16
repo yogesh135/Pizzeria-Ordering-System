@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Pizzeria-Ordering-System.Contract\Pizzeria-Ordering-System.Contract.csproj" />
     <ProjectReference Include="..\Pizzeria-Ordering-System.DataTransfer\Pizzeria-Ordering-System.DataTransfer.csproj" />
     <ProjectReference Include="..\Pizzeria-Ordering-System.Persistence\Pizzeria-Ordering-System.Persistence.csproj" />
   </ItemGroup>

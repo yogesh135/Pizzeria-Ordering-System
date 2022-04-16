@@ -55,6 +55,6 @@ namespace Pizzeria_Ordering_System.DataTransfer
         /// <summary>
         /// Constituents collection.
         /// </summary>
-        public IEnumerable<PizzaConstituents> PizzaConstituents { get; set; }
+        public IList<PizzaConstituents> PizzaConstituents { get; set; }
     }
 }
