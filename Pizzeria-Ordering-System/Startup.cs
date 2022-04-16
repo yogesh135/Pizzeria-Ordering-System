@@ -32,6 +32,17 @@ namespace Pizzeria_Ordering_System
                 config.AssumeDefaultVersionWhenUnspecified = true;
             });
 
+            services.AddSwaggerGen(options =>
+            {
+                options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+                {
+                    Title = "Pizzeria Order System Web API",
+                    Version = "v1",
+                    Description = "Pizzeria Ordering System",
+                });
+                options.CustomSchemaIds(type => type.ToString());
+            });
+
             services.AddControllers().AddJsonOptions(options =>
             {
                 options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
@@ -40,6 +51,8 @@ namespace Pizzeria_Ordering_System
 
             services.AddSingleton<IDataStoreRepository, DataStoreRepository>();
             services.AddScoped<IConstituentsRepository, ConstituentsRepository>();
+            services.AddScoped<IPizzeriaBuilder, PizzeriaBuilder>();
+            services.AddScoped<IPizzaOrderRepository, PizzaOrderRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -65,6 +78,9 @@ namespace Pizzeria_Ordering_System
             {
                 endpoints.MapControllers();
             });
+
+            app.UseSwagger();
+            app.UseSwaggerUI(options => options.SwaggerEndpoint("/swagger/v1/swagger.json", "Pizzeria Ordering System Services"));
         }
     }
 }
