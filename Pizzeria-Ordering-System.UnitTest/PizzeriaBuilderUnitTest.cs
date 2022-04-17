@@ -14,9 +14,8 @@ namespace Pizzeria_Ordering_System.UnitTest
             pizzeriaBuilder = new PizzeriaBuilder();
         }
 
-
         /// <summary>
-        /// 
+        /// Customized Pizza.
         /// </summary>
         [Fact]
         public void CreateCustomPizza()
@@ -40,7 +39,6 @@ namespace Pizzeria_Ordering_System.UnitTest
 
             // Act
             var pizza = pizzeriaBuilder.BakePizza();
-
 
             // Assert
             Assert.NotNull(pizza);

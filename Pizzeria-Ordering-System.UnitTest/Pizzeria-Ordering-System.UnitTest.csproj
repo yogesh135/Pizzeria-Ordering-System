@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Pizzeria-Ordering-System.Repository\Pizzeria-Ordering-System.Repository.csproj" />
+    <ProjectReference Include="..\Pizzeria-Ordering-System\Pizzeria-Ordering-System.csproj" />
   </ItemGroup>
 
 </Project>
