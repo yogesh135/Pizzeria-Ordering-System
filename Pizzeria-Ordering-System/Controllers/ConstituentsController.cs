@@ -84,7 +84,7 @@ namespace Pizzeria_Ordering_System.Controllers
         /// <param name="typeId"></param>
         /// <returns></returns>
         [HttpGet]
-        [Route("Toppings")]
+        [Route("toppings")]
         public async Task<IEnumerable<Constituents>> GetToppings()
         {
             return await this.constituentsRepository.GetConstituentByTypeIdAsync(2);
@@ -95,7 +95,7 @@ namespace Pizzeria_Ordering_System.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [Route("Sauce")]
+        [Route("sauce")]
         public async Task<IEnumerable<Constituents>> GetPizzaSauce()
         {
             return await this.constituentsRepository.GetConstituentByTypeIdAsync(3);
@@ -106,7 +106,7 @@ namespace Pizzeria_Ordering_System.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [Route("Crust")]
+        [Route("crust")]
         public async Task<IEnumerable<Constituents>> GetCrust()
         {
             return await this.constituentsRepository.GetConstituentByTypeIdAsync(1);
@@ -117,7 +117,7 @@ namespace Pizzeria_Ordering_System.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [Route("ExtraCheese")]
+        [Route("extraCheese")]
         public async Task<IEnumerable<Constituents>> GetExtraCheese()
         {
             return await this.constituentsRepository.GetConstituentByTypeIdAsync(4);

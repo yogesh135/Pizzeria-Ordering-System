@@ -52,7 +52,7 @@ namespace Pizzeria_Ordering_System.Controllers
         /// <returns></returns>
         [HttpPost]
         [Route("customPizza")]
-        public async Task<IActionResult> BakeCustomizedPizzas([FromBody] PizzaOrderRequest request)
+        public async Task<IActionResult> BakeCustomizedPizza([FromBody] PizzaOrderRequest request)
         {
             try
             {
