@@ -111,7 +111,7 @@ namespace Pizzeria_Ordering_System.Persistence
                  Id = 3,
                  Name ="Spiced Paneer",
                  RecipeType = RecipeType.Vegeterian,
-                 ConstituentTypeId = 3,
+                 ConstituentTypeId = 4,
                  Price = 60,
 
              },
@@ -135,7 +135,7 @@ namespace Pizzeria_Ordering_System.Persistence
                  Id = 4,
                  Name ="Peri Peri Chicken",
                  RecipeType = RecipeType.NonVegeterian,
-                 ConstituentTypeId = 3,
+                 ConstituentTypeId = 4,
                  Price = 150,
 
              },
