@@ -1,3 +1,4 @@
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -7,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using Pizzeria_Ordering_System.Persistence;
 using Pizzeria_Ordering_System.Repository.Implementations;
 using Pizzeria_Ordering_System.Repository.Interfaces;
+using System;
 using System.Text.Json.Serialization;
 
 namespace Pizzeria_Ordering_System
@@ -23,8 +25,12 @@ namespace Pizzeria_Ordering_System
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
-            
+            services.AddControllers()
+                .AddFluentValidation(s =>
+                {
+                    s.RegisterValidatorsFromAssemblyContaining<Startup>();
+                });
+
             services.AddApiVersioning(config =>
             {
                 // Specify the default API Version as 1.0
@@ -48,6 +54,9 @@ namespace Pizzeria_Ordering_System
                 options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
                 options.JsonSerializerOptions.IgnoreNullValues = true;
             });
+
+            // Added Auto Mapper
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             services.AddSingleton<IDataStoreRepository, DataStoreRepository>();
             services.AddScoped<IConstituentsRepository, ConstituentsRepository>();

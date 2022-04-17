@@ -5,4 +5,8 @@
     <RootNamespace>Pizzeria_Ordering_System.Contract</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="FluentValidation.AspNetCore" Version="10.4.0" />
+  </ItemGroup>
+
 </Project>

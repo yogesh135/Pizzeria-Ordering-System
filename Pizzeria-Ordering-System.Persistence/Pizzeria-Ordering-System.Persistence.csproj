@@ -6,6 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="11.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Pizzeria-Ordering-System.Contract\Pizzeria-Ordering-System.Contract.csproj" />
     <ProjectReference Include="..\Pizzeria-Ordering-System.DataTransfer\Pizzeria-Ordering-System.DataTransfer.csproj" />
   </ItemGroup>
 
