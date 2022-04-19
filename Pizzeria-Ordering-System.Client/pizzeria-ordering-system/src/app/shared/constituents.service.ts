@@ -14,54 +14,54 @@ export class ConstituentsService {
   constructor(private httpClient: HttpClient) { }
 
   public getAllConstituents():  Observable<IConstituents[]> {
-    const route = environment.server_url + 'api/v1/constituents/getAll';
-    return this.httpClient.get<IConstituents[]>(route);
+    const url = environment.server_url + 'api/v1/constituents/getAll';
+    return this.httpClient.get<IConstituents[]>(url);
 
   }
   public getToppings():  Observable<IConstituents[]> {
-    const route = environment.server_url + 'api/v1/constituents/toppings';
-    return this.httpClient.get<IConstituents[]>(route);
+    const url = environment.server_url + 'api/v1/constituents/toppings';
+    return this.httpClient.get<IConstituents[]>(url);
 
   }
 
   public getCrust():  Observable<IConstituents[]> {
-    const route = environment.server_url + 'api/v1/constituents/crust';
-    return this.httpClient.get<IConstituents[]>(route);
+    const url = environment.server_url + 'api/v1/constituents/crust';
+    return this.httpClient.get<IConstituents[]>(url);
 
   }
 
   public getSauce():  Observable<IConstituents[]> {
-    const route = environment.server_url + 'api/v1/constituents/sauce';
-    return this.httpClient.get<IConstituents[]>(route);
+    const url = environment.server_url + 'api/v1/constituents/sauce';
+    return this.httpClient.get<IConstituents[]>(url);
 
   }
 
   public getExtraCheese():  Observable<IConstituents[]> {
-    const route = environment.server_url + 'api/v1/constituents/extraCheese';
-    return this.httpClient.get<IConstituents[]>(route);
+    const url = environment.server_url + 'api/v1/constituents/extraCheese';
+    return this.httpClient.get<IConstituents[]>(url);
     
   }
 
   public getPizzaSize():  Observable<IPizzaSize[]> {
-    const route = environment.server_url + 'api/v1/constituents/size';
-    return this.httpClient.get<IPizzaSize[]>(route);
+    const url = environment.server_url + 'api/v1/constituents/size';
+    return this.httpClient.get<IPizzaSize[]>(url);
 
   }
   public getConstituentById(constituentId: number): Observable<IConstituents> {
-    const route = environment.server_url + `api/v1/constituents/${constituentId}`;
-    return this.httpClient.get<IConstituents>(route);
+    const url = environment.server_url + `api/v1/constituents/${constituentId}`;
+    return this.httpClient.get<IConstituents>(url);
 
   }
 
   public getAllConstituentsType(): Observable<IConstituentsType> {
-    const route = environment.server_url + 'api/v1/constituents/types';
-    return this.httpClient.get<IConstituentsType>(route);
+    const url = environment.server_url + 'api/v1/constituents/types';
+    return this.httpClient.get<IConstituentsType>(url);
 
   }
 
   public getConstituentType(typeId: number): Observable<IConstituents> {
-    const route = environment.server_url + `api/v1/constituents/types/${typeId}`;
-    return this.httpClient.get<IConstituents>(route);
-    
+    const url = environment.server_url + `api/v1/constituents/types/${typeId}`;
+    return this.httpClient.get<IConstituents>(url);
+
   }
 }

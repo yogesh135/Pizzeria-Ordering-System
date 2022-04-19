@@ -4,5 +4,5 @@ export interface IPizzaOrderRequest {
     numberOfPizza: number,
     isAddCheese: boolean,
     isAddExtraCheese: boolean,
-    ingredients: number[]
+    constituents: number[]
 }

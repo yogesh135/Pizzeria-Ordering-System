@@ -45,7 +45,7 @@ namespace Pizzeria_Ordering_System.Persistence
                     Name = "Veggie Dhamaka",
                     Description = "Veggie Pizza for vegetarians with normal crust and Sauces",
                     Price = 150,
-                    ImageUrl = "",
+                    ImageUrl = "https://www.dominos.co.in/files/items/Deluxe_Veggie.jpg",
                     CategoriesId = 1, //Standard
                     PizzaConstituents = new List<PizzaConstituents>()
                     {
@@ -62,7 +62,7 @@ namespace Pizzeria_Ordering_System.Persistence
                     Name = "Customized Pizza",
                     Description = "Veg Customized Pizza with cheese burst and thin crust",
                     Price = 220,
-                    ImageUrl = "",
+                    ImageUrl = "https://www.dominos.co.in/files/items/Digital_Veggie_Paradise_olo_266x265.jpg",
                     CategoriesId = 2, //Customized
                     IsAddCheese = true,
                     IsAddExtraCheese = true,

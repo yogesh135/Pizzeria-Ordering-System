@@ -1,1 +1,25 @@
-<p>menu works!</p>
+<div>
+    <div>
+        <h2 style="text-align:center">Menu</h2>
+        <h3 style="text-align:center">Available Pizzas</h3>
+    </div>
+
+    <button type="button" class="btn btn-primary" [routerLink]="['/bake-pizza']">
+        Create Custom Pizza
+    </button>
+</div>
+
+<div id="div_data" *ngIf="pizzas?.length > 0">
+    <ul id="ul_data">
+        <li *ngFor="let pizza of pizzas">
+            <img [src]="pizza.imageUrl" alt="{{pizza.name}}">
+            <p>Name: {{pizza.name}}</p>
+            <p>Price: {{pizza.price}}</p>
+            <p>Description: {{pizza.description}}</p>
+            <div *ngFor="let constituent of pizza?.constituents">
+                <p>Constituents: {{constituent.name}}</p>
+                <p>Constituents Price: {{constituent.price}}</p>
+            </div>
+        </li>
+    </ul>
+</div>
