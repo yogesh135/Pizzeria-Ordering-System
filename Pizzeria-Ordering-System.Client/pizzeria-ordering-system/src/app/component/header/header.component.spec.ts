@@ -22,4 +22,10 @@ describe('HeaderComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should validate title name', () => {
+    component.title = "Testing Title";
+    fixture.detectChanges();
+    expect(fixture.nativeElement.querySelector('div').innerText).toEqual("Testing Title");
+  });
 });

@@ -9,7 +9,7 @@ import { PizzaOrderService } from 'src/app/shared/pizzaorder.service';
 })
 export class MenuComponent implements OnInit {
 
-  public pizzas : IPizza[];
+  public pizzas : IPizza[] = [];
   constructor(private pizzaOrderService: PizzaOrderService) { }
 
   ngOnInit(): void {
