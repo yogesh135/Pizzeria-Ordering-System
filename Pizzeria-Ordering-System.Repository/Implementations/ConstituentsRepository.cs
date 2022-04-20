@@ -39,7 +39,6 @@ namespace Pizzeria_Ordering_System.Repository.Implementations
                         Name = constituents.Name,
                         Price = constituents.Price,
                         RecipeType = constituents.RecipeType,
-                        //ConstituentTypeId = constituents.ConstituentTypeId,
                     };
         }
 
@@ -67,7 +66,6 @@ namespace Pizzeria_Ordering_System.Repository.Implementations
                        Name = constituent.Name,
                        Price = constituent.Price,
                        RecipeType = constituent.RecipeType,
-                       //ConstituentTypeId = constituent.ConstituentTypeId
                    }).FirstOrDefault();
         }
 
@@ -86,7 +84,6 @@ namespace Pizzeria_Ordering_System.Repository.Implementations
                         Name = constituent.Name,
                         Price = constituent.Price,
                         RecipeType = constituent.RecipeType,
-                        //ConstituentTypeId = constituent.ConstituentTypeId
                     };
         }
 

@@ -16,3 +16,30 @@
  .container {
    margin: 50px;
  }
+
+ .toast {
+    &-container {
+        background-color: transparent !important; // sass-lint:disable-line no-important // sass-lint:disable-line no-important
+    }
+    &-top-right {
+        top: 80px;
+        box-shadow: none;
+        right: 0;
+        .ngx-toastr {
+            padding: 2em 4em !important; // sass-lint:disable-line no-important
+            border-radius: 0 !important; // sass-lint:disable-line no-important
+            width: auto !important; // sass-lint:disable-line no-important
+            box-shadow: none !important; // sass-lint:disable-line no-important
+            &.toast-success {
+                background-color: green;
+            }
+        }
+    }
+
+    .button1{
+        padding: 5px 25px;
+        font-size: 15px;
+        font-family: math;
+        background-color: revert;
+    }
+}

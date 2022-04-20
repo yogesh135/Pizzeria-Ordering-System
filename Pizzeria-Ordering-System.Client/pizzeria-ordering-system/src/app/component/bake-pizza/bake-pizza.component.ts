@@ -1,5 +1,7 @@
-import { Component, IterableDiffers, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { IConstituents } from 'src/app/models/i.constituents';
 import { IPizza } from 'src/app/models/i.pizza';
 import { IPizzaOrderRequest } from 'src/app/models/i.pizza-order-request';
@@ -30,10 +32,12 @@ export class BakePizzaComponent implements OnInit {
 
   constructor(public formBuilder: FormBuilder,
     private constituentService: ConstituentsService,
-    private pizzaOrderService: PizzaOrderService) { }
+    private pizzaOrderService: PizzaOrderService,
+    public router: Router,
+    private toasr: ToastrService) { }
 
   ngOnInit(): void {
-    this.url = "https://www.dominos.co.in/theme2/front/images/menu-images/my-pizzamania.png";
+    this.url = PizzeriaConstants.CustomePizzaUrl;
     this.createPizzaForm();
     this.getAllPizza();
     this.getAllCrust();
@@ -191,16 +195,20 @@ export class BakePizzaComponent implements OnInit {
         isAddExtraCheese: this.customPizzaForm.controls.isAddExtraCheese.value,
         numberOfPizza: this.customPizzaForm.controls.numberOfPizza.value,
         constituents: constituent,
-        size: this.getMultiplerForSize(this.customPizzaForm.controls['sizeId'].value).id
+        size: this.getMultiplerForSize(this.customPizzaForm.controls['sizeId'].value)?.id
       }
 
       if(this.selectedPizza.name === PizzeriaConstants.VeggieDhamaka) {
         this.pizzaOrderService.bakePizza(request, this.selectedPizza.id).subscribe(_ => {
-          alert(`Ordered Placed Successfully for ${this.selectedPizza.name}`);
+          this.toasr.success(`Ordered Placed Successfully for ${this.selectedPizza.name}`);
+          setTimeout(() => {
+            this.router.navigate(['menu'])}, 6000);
         });
       } else if (this.selectedPizza.name === PizzeriaConstants.CustomizedPizza) {
         this.pizzaOrderService.bakeCustomizedPizza(request).subscribe(_ => {
-          alert(`Ordered Placed Successfully for ${this.selectedPizza.name}`);
+          this.toasr.success(`Ordered Placed Successfully for ${this.selectedPizza.name}`);
+          setTimeout(() => {
+            this.router.navigate(['menu'])}, 6000);
         });
       }
     }

@@ -12,6 +12,8 @@ import { PizzaOrderService } from './shared/pizzaorder.service';
 import { ConstituentsService } from './shared/constituents.service';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -23,11 +25,17 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
     CommonModule,
     FlexLayoutModule,
     ReactiveFormsModule,
+    ToastrModule.forRoot({
+      timeOut:5000,
+      preventDuplicates: true,
+      enableHtml: true
+    })
   ],
   providers: [PizzaOrderService, ConstituentsService],
   bootstrap: [AppComponent]

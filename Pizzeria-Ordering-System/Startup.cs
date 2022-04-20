@@ -58,7 +58,7 @@ namespace Pizzeria_Ordering_System
             // Added Auto Mapper
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-            services.AddSingleton<IDataStoreRepository, DataStoreRepository>();
+            services.AddTransient<IDataStoreRepository, DataStoreRepository>();
             services.AddScoped<IConstituentsRepository, ConstituentsRepository>();
             services.AddScoped<IPizzeriaBuilder, PizzeriaBuilder>();
             services.AddScoped<IPizzaOrderRepository, PizzaOrderRepository>();
