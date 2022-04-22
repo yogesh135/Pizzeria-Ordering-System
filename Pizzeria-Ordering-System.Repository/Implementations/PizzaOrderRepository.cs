@@ -172,6 +172,28 @@ namespace Pizzeria_Ordering_System.Repository.Implementations
         }
 
         /// <summary>
+        /// Get Ordered Pizza.
+        /// </summary>
+        /// <returns></returns>
+        public async Task<IEnumerable<Contract.SideBeverages>> GetOrderedSideBeverageAsync()
+        {
+            var result = (from sideBeverage in await this.dataStoreRepository.GetAllSideBeveragesAsync()
+                          select new Contract.SideBeverages
+                          {
+                              Id = sideBeverage.Id,
+                              Name = sideBeverage.Name,
+                              ImageUrl = sideBeverage.ImageUrl,
+                              Description = sideBeverage.Description,
+                              Price = sideBeverage.Price,
+                              BeverageConstituents = sideBeverage.BeverageConstituents,
+                              BeverageType = sideBeverage.BeverageType.ToString(),
+                              CategoriesId = sideBeverage.CategoriesId
+                          }).AsEnumerable();
+
+            return result;
+        }
+
+        /// <summary>
         /// Get Pizza By Id.
         /// </summary>
         /// <param name="pizzaId">Pizza Id.</param>

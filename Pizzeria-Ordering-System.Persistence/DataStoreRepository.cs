@@ -14,6 +14,7 @@ namespace Pizzeria_Ordering_System.Persistence
     {
         public List<PizzaSize> pizzaSize;
         public List<Pizza> pizza;
+        public List<SideBeverages> sideBeverages;
         public List<Constituents> constituents;
 
         public DataStoreRepository()
@@ -21,7 +22,7 @@ namespace Pizzeria_Ordering_System.Persistence
             pizzaSize = new List<PizzaSize>();
             pizza = new List<Pizza>();
             constituents = new List<Constituents>();
-
+            sideBeverages = new List<SideBeverages>();
             // Load seed data for the application.
             LoadSeedData();
         }
@@ -33,6 +34,7 @@ namespace Pizzeria_Ordering_System.Persistence
             GetAllConstituentTypesAsync();
             GetAllPizzasAsync();
             GetPizzaSizeAsync();
+            LoadSideBeverages();
         }
 
         private void LoadSeedPizza()
@@ -76,8 +78,35 @@ namespace Pizzeria_Ordering_System.Persistence
                     }
                 }
             });
+        }
 
-
+        private void LoadSideBeverages()
+        {
+            sideBeverages.AddRange(new List<SideBeverages>
+            {
+                new SideBeverages
+                {
+                    Id = 3,
+                    Name = "Garlic Bread Stick",
+                    Description = "The endearing tang of garlic in breadstics baked to perfection.",
+                    CategoriesId= 1,
+                    BeverageType = BeverageType.GarlicBreadStick,
+                    BeverageConstituents = "Garlic Bread Stick, Coke, With Cheese",
+                    ImageUrl = "https://api.pizzahut.io/v1/content/en-in/in-1/images/side/garlic-bread-stix.483aa904aa663102c645ce56261d360d.1.jpg?width=375",
+                    Price = 110
+                },
+                new SideBeverages
+                {
+                    Id = 4,
+                    Name = "Stuffed Garlic Bread",
+                    Description = "Freshly Baked Garlic Bread stuffed with mozzarella cheese",
+                    CategoriesId= 2,
+                    BeverageType = BeverageType.StuffedGarlicBread,
+                    BeverageConstituents = "Garlic Bread Stickmozzarella cheese, sweet corns, tangy, spicy jalapeños",
+                    ImageUrl = "https://api.pizzahut.io/v1/content/en-in/in-1/images/side/mexican-garlic-breadstix-single.eab1259910d7d29cdba8ceb2e1b36355.1.jpg?width=375",
+                    Price = 150
+                }
+            });
         }
 
         public IEnumerable<Categories> GetAllCategories()
@@ -162,6 +191,14 @@ namespace Pizzeria_Ordering_System.Persistence
                  ConstituentTypeId = 2,
                  Price = 90,
 
+             },
+            new Constituents(){
+                 Id = 8,
+                 Name ="Red Paprika",
+                 RecipeType = RecipeType.Vegeterian,
+                 ConstituentTypeId = 2,
+                 Price = 60,
+
              }
             };
 
@@ -208,6 +245,11 @@ namespace Pizzeria_Ordering_System.Persistence
         public Task<IEnumerable<Pizza>> GetAllPizzasAsync()
         {
             return Task.FromResult(pizza.AsEnumerable());
+        }
+
+        public Task<IEnumerable<SideBeverages>> GetAllSideBeveragesAsync()
+        {
+            return Task.FromResult(sideBeverages.AsEnumerable());
         }
 
         public Task<Constituents> GetConstituentByIdAsync(int constituentId)

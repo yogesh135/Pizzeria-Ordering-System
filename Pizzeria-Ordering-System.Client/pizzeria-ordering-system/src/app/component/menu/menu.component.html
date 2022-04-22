@@ -14,12 +14,29 @@
         <li *ngFor="let pizza of pizzas">
             <img [src]="pizza.imageUrl" alt="{{pizza.name}}">
             <p>Name: {{pizza.name}}</p>
-            <p>Price: {{pizza.price}}</p>
             <p>Description: {{pizza.description}}</p>
             <div *ngFor="let constituent of pizza?.constituents">
                 <p>Constituents: {{constituent.name}}</p>
-                <p>Constituents Price: {{constituent.price}}</p>
+                <!-- <p>Constituents Price: {{constituent.price}}</p> -->
             </div>
+            <p>Total Price: {{pizza.price}}</p>
+        </li>
+    </ul>
+</div>
+
+<div>
+    <h3 style="text-align:center">Sides Beverages</h3>
+</div>
+
+<div id="div_data" *ngIf="sideBeverages?.length > 0">
+    <ul id="ul_data">
+        <li *ngFor="let sideBeverage of sideBeverages">
+            <img [src]="sideBeverage.imageUrl" alt="{{sideBeverage.name}}">
+            <p>Name: {{sideBeverage.name}}</p>
+            <p>BeverageType: {{sideBeverage.beverageType}}</p>
+            <p>Description: {{sideBeverage.description}}</p>
+            <p>Constituents: {{sideBeverage.beverageConstituents}}</p>
+            <p>Total Price: {{sideBeverage.price}}</p>
         </li>
     </ul>
 </div>

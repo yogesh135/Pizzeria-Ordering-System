@@ -125,7 +125,7 @@ namespace Pizzeria_Ordering_System.UnitTest.Controller
                 });
 
             // Act
-            var result = await controller.BakeCustomizedPizzas(request);
+            var result = await controller.BakeCustomizedPizza(request);
 
             // Assert
             Assert.NotNull(result);
@@ -142,7 +142,7 @@ namespace Pizzeria_Ordering_System.UnitTest.Controller
                 .ThrowsAsync(new ArgumentNullException("please select pizza"));
 
             // assert
-            Assert.ThrowsAsync<ArgumentNullException>(async () => await controller.BakeCustomizedPizzas(null));
+            Assert.ThrowsAsync<ArgumentNullException>(async () => await controller.BakeCustomizedPizza(null));
         }
 
         [Fact]

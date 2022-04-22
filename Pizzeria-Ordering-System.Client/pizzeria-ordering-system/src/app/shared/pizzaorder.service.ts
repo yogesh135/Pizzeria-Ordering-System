@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { IPizza } from '../models/i.pizza';
 import { IPizzaOrderRequest } from '../models/i.pizza-order-request';
+import { ISideBeverages } from '../models/i.side-beverages';
 
 
 @Injectable({
@@ -16,6 +17,11 @@ export class PizzaOrderService {
   public getAllPizza(): Observable<IPizza[]> {
     const url = environment.server_url + 'api/v1/pizza/getAll';
     return this.httpClient.get<IPizza[]>(url);
+  }
+
+  public getAllSideBeverages(): Observable<ISideBeverages[]> {
+    const url = environment.server_url + 'api/v1/pizza/getAllSideBeverages';
+    return this.httpClient.get<ISideBeverages[]>(url);
   }
 
   public getPizzaById(pizzaId: number): Observable<IPizza> {

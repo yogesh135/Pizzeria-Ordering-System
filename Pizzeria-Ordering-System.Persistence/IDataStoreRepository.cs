@@ -13,6 +13,12 @@ namespace Pizzeria_Ordering_System.Persistence
         Task<IEnumerable<Pizza>> GetAllPizzasAsync();
 
         /// <summary>
+        /// Get All Pizzas.
+        /// </summary>
+        /// <returns></returns>
+        Task<IEnumerable<SideBeverages>> GetAllSideBeveragesAsync();
+
+        /// <summary>
         /// Get Pizza by Id
         /// </summary>
         /// <returns></returns>

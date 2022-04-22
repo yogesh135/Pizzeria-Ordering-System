@@ -13,6 +13,12 @@ namespace Pizzeria_Ordering_System.Repository.Interfaces
         Task<IEnumerable<Pizza>> GetOrderedPizzaAsync();
 
         /// <summary>
+        /// Get Side Order.
+        /// </summary>
+        /// <returns></returns>
+        Task<IEnumerable<SideBeverages>> GetOrderedSideBeverageAsync();
+
+        /// <summary>
         /// Get Pizza  by Id.
         /// </summary>
         /// <param name="Id">Pizza Id.</param>

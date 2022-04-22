@@ -29,6 +29,7 @@ export class BakePizzaComponent implements OnInit {
   public previousNoPizza: number = 1;
   public currentNoPizza: number;
   public url: string;
+  public sideBeverageUrl: string;
 
   constructor(public formBuilder: FormBuilder,
     private constituentService: ConstituentsService,
@@ -38,6 +39,7 @@ export class BakePizzaComponent implements OnInit {
 
   ngOnInit(): void {
     this.url = PizzeriaConstants.CustomePizzaUrl;
+    this.sideBeverageUrl = PizzeriaConstants.SideBeverageUrl;
     this.createPizzaForm();
     this.getAllPizza();
     this.getAllCrust();
@@ -185,8 +187,10 @@ export class BakePizzaComponent implements OnInit {
 
   public onBakePizza() {
     const constituent = [];
+    var constituents = ''; 
     this.selectedConstituents.forEach(x => {
       constituent.push(x.id);
+      constituents += x.name + ' ';
     });
     if (this.customPizzaForm.valid) {
       let request: IPizzaOrderRequest = {
@@ -200,7 +204,7 @@ export class BakePizzaComponent implements OnInit {
 
       if(this.selectedPizza.name === PizzeriaConstants.VeggieDhamaka) {
         this.pizzaOrderService.bakePizza(request, this.selectedPizza.id).subscribe(_ => {
-          this.toasr.success(`Ordered Placed Successfully for ${this.selectedPizza.name}`);
+          this.toasr.success(`Ordered Placed Successfully for ${this.selectedPizza.name}, Ordered Constituents: ${constituents}`);
           setTimeout(() => {
             this.router.navigate(['menu'])}, 6000);
         });

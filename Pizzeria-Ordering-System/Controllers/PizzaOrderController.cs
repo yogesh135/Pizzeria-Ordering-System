@@ -33,6 +33,18 @@ namespace Pizzeria_Ordering_System.Controllers
         }
 
         /// <summary>
+        /// Get All Pizzas.
+        /// </summary>
+        /// <returns>List of Pizzas.</returns>
+        [HttpGet]
+        [Route("getAllSideBeverages")]
+        public async Task<IEnumerable<SideBeverages>> GetAllSideBeverages()
+        {
+            var result = await this.pizzaOrderRepository.GetOrderedSideBeverageAsync();
+            return result;
+        }
+
+        /// <summary>
         /// Get Pizza By Id
         /// </summary>
         /// <param name="pizzaId">pizza id.</param>

@@ -7,7 +7,7 @@
 </button>
 
 <div class="container" fxLayout fxLayout.xs="column" fxLayoutAlign="center center">
-    <div fxFlex="70%" fxLayoutAlign="start end" class="filter-text">
+    <div fxFlex="50%" fxLayoutAlign="start end" class="filter-text">
         <form [formGroup]="customPizzaForm" (ngSubmit)="onBakePizza()">
 
             <div fxLayout="row" class="form-row">
@@ -72,29 +72,35 @@
         </form>
     </div>
 
-
-    <div fxFlex="20%">
-        <img [src]="url" alt="Custom Pizza">
-        <div class="detail-container" *ngIf="selectedPizza !== undefined">
+    <!-- <div fxFlex="20%"> -->
+    <div class="detail-container" *ngIf="selectedPizza !== undefined">
+        <div>
+            {{selectedPizza.name}}
+        </div>
+        
+        <div>
+            Description: {{selectedPizza.description}}
+        </div>
+        <div *ngIf="selectedPizza?.constituents?.length > 0">
+            Constituents:
             <div>
-                {{selectedPizza.name}}
-            </div>
-            <div>
-                Price: {{selectedPizza.price}}
-            </div>
-            <div>
-                Description: {{selectedPizza.description}}
-            </div>
-            <div *ngIf="selectedPizza?.constituents?.length > 0">
-                Constituents:
-                <ul>
-                    <li *ngFor="let constituent of selectedPizza.constituents">
-                        <p>Name: {{constituent.name}}</p>
-                    </li>
-                </ul>
+                <span *ngFor="let constituent of selectedPizza.constituents">
+                    <p>Name: {{constituent.name}}</p>
+                    <p>Constituent Price: {{constituent.price}}</p>
+                </span>
             </div>
         </div>
+
+        <div class="pizza-price">
+            Total Price: {{selectedPizza.price}}
+        </div>
     </div>
+    <div>
+        <img [src]="url" alt="Custom Pizza">
+        <img [src]="sideBeverageUrl" alt="Side Beverages">
+    </div>
+<!-- </div> -->
+    
 </div>
 
 <div fxLayout="row">
