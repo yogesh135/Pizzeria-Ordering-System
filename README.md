@@ -1,5 +1,7 @@
 # Pizzeria-Ordering-System
 ## Branch Name: Master
+![Design](Design/PizzeriaSystem.png)
+
 # API :
 	1. This is the Backend Solution written in .Net Core 3.1
   2. Build the Solution and Run, This would run the solution on https://localhost:44303/ (Configured)
